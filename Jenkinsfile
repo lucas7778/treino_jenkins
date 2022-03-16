@@ -17,7 +17,7 @@ pipeline {
     stage('build') {
       agent { docker { image 'python:3.8.5-alpine3.12'}}
         steps {
-          sh 'pip install -r requirements.txt && python ${WORKSPACE}/src/test.py'
+          sh 'pip install numpy && python ${WORKSPACE}/src/test.py'
         }
       }
     stage('Docker Image') {
