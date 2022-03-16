@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node {
-      label 'master'
+      label 'Master'
     }
   }
   stages {
@@ -30,6 +30,6 @@ pipeline {
         sh 'docker run -p 50000:5000 -d --name primeirocontainer personal-python-test'
       }
     }   
-    }
+    
   }
 }
