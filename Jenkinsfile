@@ -1,10 +1,13 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'master'
+    }
+  }
   stages {
     stage('Initialize') {
       steps {
-   
-        script{
+          script{
             def dockerHome = tool 'mydocker'
             env.PATH = "${dockerHome}/bin${env.PATH}"
 
@@ -14,7 +17,7 @@ pipeline {
     stage('build') {
       agent { docker { image 'python:3.8.5-alpine3.12'}}
         steps {
-          sh 'pip install numpy && python ${WORKSPACE}/src/test.py'
+          sh 'pip install numpy t && python ${WORKSPACE}/src/test.py'
         }
       }
     stage('Docker Image') {
