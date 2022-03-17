@@ -17,7 +17,7 @@ pipeline {
     stage('build') {
       agent { docker { image 'python:3.7.2' }}
         steps {
-          sh 'pip install numpy && python ${D:\j\WORKSPACE}/src/test.py'
+          sh 'pip install numpy && python ${j\WORKSPACE}/src/test.py'
         }
       }
     
