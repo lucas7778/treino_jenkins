@@ -1,13 +1,10 @@
 pipeline {
-  agent {
-    node {
-      label 'Master'
-    }
-  }
+  agent any
   stages {
     stage('Initialize') {
       steps {
-          script{
+   
+        script{
             def dockerHome = tool 'mydocker'
             env.PATH = "${dockerHome}/bin${env.PATH}"
 
