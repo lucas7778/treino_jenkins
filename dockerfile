@@ -1,7 +1,7 @@
 FROM python:3.7.2
-WORKDIR /app
+WORKDIR /WORKSPACE
 
-COPY . /app
+COPY . /WORKSPACE
 
 
 RUN pip install numpy
